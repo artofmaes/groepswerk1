@@ -1,0 +1,22 @@
+/*CSS Groepswerk1*/
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+@import"https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"; 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap');
+
+/* https://daneden.github.io/animate.css */
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
+
+@import "variables";
+@import "mixins";
+
+*{@include paddingfix;} //mixin
+
+@include navlijst;
+body{
+    font: 100%/1.6 $hoofdfont;
+    max-width: 1920px;
+    margin: 0 auto;
+    background: $achtergrondkleur;
+}
