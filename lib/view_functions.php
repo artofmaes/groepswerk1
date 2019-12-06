@@ -7,6 +7,13 @@ function BasicHead()
     $_SESSION["head_printed"] = true;
 }
 
+function BasicFooter()
+{
+    print LoadTemplate("footer");
+
+    $_SESSION["footer_printed"] = true;
+}
+
 function PrintNavBar()
 {
     //navbar items ophalen
