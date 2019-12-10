@@ -7,15 +7,15 @@ $buttonvalue = $_POST['loginbutton'];
 
 if ( $formname == "login_form" AND $buttonvalue == "Log in" )
 {
-    if ( ControleLoginWachtwoord( $_POST['usr_login'], $_POST['usr_paswd'] ) )
+    if ( ControleLoginWachtwoord( $_POST['user_username'], $_POST['user_password'] ) )
     {
-        $_SESSION["msg"][] = "Welkom, " . $_SESSION['usr']['usr_voornaam'] . "!" ;
-        header("Location: /wdev_jordi/oef62/steden.php");
+        $_SESSION["msg"][] = "Welkom, " . $_SESSION['user']['user_username'] . "!" ;
+        header("Location: /wdev_jordi/groepswerk1/index.php");
     }
     else
     {
         $_SESSION["msg"][] = "Sorry! Verkeerde login of wachtwoord!";
-        header("Location: /wdev_jordi/oef62/login.php");
+        header("Location: /wdev_jordi/groepswerk1/login/login.php");
     }
 }
 else

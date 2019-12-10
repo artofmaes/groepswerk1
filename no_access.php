@@ -2,12 +2,12 @@
 $no_access = true;
 require_once "lib/autoload.php";
 
-BasicHead();
-
+print BasicHead();
+print HomePage();
 ?>
 <body>
 
-<div class="jumbotron text-center">
+<div>
     <h1>Geen toegang!</h1>
     <p>Gelieve eerst in te loggen</p>
 </div>
