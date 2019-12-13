@@ -2,8 +2,8 @@
 $no_access = true;
 require_once "lib/autoload.php";
 
-print BasicHead();
-print HomePage();
+BasicHead();
+HomePage();
 ?>
 <body>
 

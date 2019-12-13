@@ -7,22 +7,7 @@ if ( isset($_SESSION['usr']) ) { $_SESSION["msg"][] = "U bent al ingelogd!"; hea
 
 BasicHead();
 ShowMessages();
-?>
-<body>
-
-<div class="jumbotron text-center">
-    <h1>Login</h1>
-</div>
-
-<div class="container">
-    <div class="row">
-
-        <?php
-        print LoadTemplate("login");
+HomePage3();
+print LoadTemplate("login");
+BasicFooter();
         ?>
-
-    </div>
-</div>
-
-</body>
-</html>

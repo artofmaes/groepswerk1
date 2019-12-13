@@ -17,6 +17,11 @@ function HomePage2()
     print LoadTemplate("homepage2");
 }
 
+function HomePage3()
+{
+    print LoadTemplate("homepage3");
+}
+
 function NavBar(){
     print LoadTemplate("nav");
 }

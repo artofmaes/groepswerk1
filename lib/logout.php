@@ -6,5 +6,5 @@ unset($_SESSION);
 session_start();
 session_regenerate_id();
 $_SESSION["msg"][] = "U bent afgemeld!";
-header("Location: groepswerk1/login.php");
+header("Location: ../login.php");
 ?>
