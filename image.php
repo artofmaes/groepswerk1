@@ -55,7 +55,7 @@ if (count($data) > 1) {
 <?php echo $cat ?>
 
 
-    <form method="post" action="detail.php"><input type="button" value="&#xf004 Like" class="far fa-heart" name="likebutton"></p></form>
+    <form method="post" action="image.php"><input type="button" value="&#xf004 Like" class="far fa-heart" name="likebutton"></p></form>
     <form method="post" action="collection.php"><p><input type="button" value="&#xf65e Add to collection" class="fas fa-folder-plus" name="collectionbutton"></p></form>
     <p><input type="button" href="img/<?php echo $afb_bestand ?>" value="&#xf019 Download" class="fas fa-download" download></p>
 

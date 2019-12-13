@@ -102,3 +102,10 @@ function ReplaceContentOneRow( $row, $template_html )
 
     return $content;
 }
+
+
+// deze functie encrypt de email adressen
+function encodeEmail($e) {
+    for ($i = 0; $i < strlen($e); $i++) { $output .= '&#'.ord($e[$i]).';'; }
+    return $output;
+}
