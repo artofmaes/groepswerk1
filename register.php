@@ -104,13 +104,11 @@ if (isset($_POST['registerbutton'])) {
     } //einde passwoord nakijken
 
     //kijken of er errors gebeurt zijn. als er geen errors in $error staan is de statement false
-    if(array_filter($errors)) {
-    }
-    else {
+    if(!array_filter($errors)) {
         $user_voornaam = ucwords($user_voornaam);
         $user_naam = ucwords($user_naam);
         $sql = "insert into user(user_voornaam, user_naam, user_email, user_username, user_date, user_password, user_join_date)
-                    values('$user_voornaam', '$user_naam', '$user_email', '$user_username', '$user_date', '$user_password', '$now')";
+                    values('$user_voornaam', '$user_naam', '$user_email', '$user_username', '$user_date_timestamp', '$user_password', '$now')";
 
         if ( ExecuteSQL($sql) ) {
             $_SESSION["msg"][] = "Bedankt voor uw registratie!" ;
@@ -122,8 +120,7 @@ if (isset($_POST['registerbutton'])) {
         else {
             $_SESSION["msg"][] = "Sorry, er liep iets fout. Uw gegevens werden niet goed opgeslagen" ;
         }
-    }
-
+    } // einde submit to database
 }   // einde POST check
 ?>
     <form id="registration_form" method="post" action="register.php">    <!-- action nakijken ---------------------------------->
