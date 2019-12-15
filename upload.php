@@ -41,7 +41,7 @@ HomePage2();
                             <option value="selectcat" disabled selected>Select Main Category</option>
                             <option value="catnat">Nature</option>
                             <option value="cathum">Human</option>
-                            <option value="catobj">Inanimate objects</option>
+                            <option value="catobj">Objects</option>
                             <option value="cattech">Techniques</option>
                         </select>
                         <p class="errors"> <?php echo $errors['afb_main_cat']; ?></p>

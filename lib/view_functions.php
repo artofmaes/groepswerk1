@@ -125,3 +125,16 @@ function Categories($cat) {
         return 'none';
     }
 }
+
+
+function afbOmschrExplode($afb_omschr) {
+    //omschr in een array zetten met gebruik van end of line
+    $afb_omschr_array = explode(PHP_EOL, $afb_omschr);
+    //hoeveel paragrafen zijn er?
+    $afb_omsch_para = count($afb_omschr_array);
+    $counter = 0;
+    while ($counter < $afb_omsch_para) {
+        echo '<p class="omschr">' . $afb_omschr_array[$counter] . '</p>';
+        $counter ++;
+    }
+} //einde function afbOmschrExplode($afb_omschr)

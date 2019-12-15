@@ -54,14 +54,14 @@ function dropdownlist(listindex) {
         case "catnat" :
             document.uploadform.afb_sec_cat.options[0]=new Option("No secondary category","catnone");
             document.uploadform.afb_sec_cat.options[1]=new Option("Human","cathum");
-            document.uploadform.afb_sec_cat.options[2]=new Option("Inanimate Objects","catobj");
+            document.uploadform.afb_sec_cat.options[2]=new Option("Objects","catobj");
             document.uploadform.afb_sec_cat.options[3]=new Option("Techniques","cattech");
             break;
 
         case "cathum" :
             document.uploadform.afb_sec_cat.options[0]=new Option("No secondary category","catnone");
             document.uploadform.afb_sec_cat.options[1]=new Option("Nature","catnat");
-            document.uploadform.afb_sec_cat.options[2]=new Option("Inanimate Objects","catobj");
+            document.uploadform.afb_sec_cat.options[2]=new Option("Objects","catobj");
             document.uploadform.afb_sec_cat.options[3]=new Option("Techniques","cattech");
             break;
 
@@ -76,7 +76,7 @@ function dropdownlist(listindex) {
             document.uploadform.afb_sec_cat.options[0]=new Option("No secondary category","catnone");
             document.uploadform.afb_sec_cat.options[1]=new Option("Nature","cathnat");
             document.uploadform.afb_sec_cat.options[2]=new Option("Human","cathum");
-            document.uploadform.afb_sec_cat.options[3]=new Option("Inanimate Objects","catobj");
+            document.uploadform.afb_sec_cat.options[3]=new Option("Objects","catobj");
             break;
 
 
