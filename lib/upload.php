@@ -22,7 +22,7 @@ $upload_map = "/img/";
 $bestands_extensie = strtolower(end(explode('.',$bestands_naam)));
 
 //$upload_pad = $huidige_map . $upload_map . basename($bestands_naam);
-
+$afb_id = $_POST['afb_id'];
 $afb_naam = $_POST['afb_naam'];
 $afb_omschr = $_POST['afb_omschr'];
 $afb_main_cat = $_POST['afb_main_cat'];
@@ -118,7 +118,7 @@ if (isset($_POST['upload'])) {      // POST check
                         set afb_tag_afb_id = '$afb_tag_afb_id',
                                 afb_tag_tag_id = '$afb_sec_cat';";
             if (ExecuteSQL($sql)) {
-                header("Location: image.php"); //-----------------------------PAGINA VAN DE DETAIL IMAGE
+                header("Location: image.php?id='$afb_id'"); //-----------------------------PAGINA VAN DE DETAIL IMAGE
             }
         }
     }

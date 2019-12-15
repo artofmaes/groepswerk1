@@ -3,7 +3,7 @@ function GetConnection()
 {
     $dsn = "mysql:host=localhost;dbname=imgine";
     $user = "root";
-    $passwd = "Xrkwq349";
+    $passwd = "123Hann";
 
     /*$dsn = "mysql:host=185.115.218.166;dbname=wdev_jordi";
     $user = "wdev_jordi";
