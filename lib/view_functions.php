@@ -109,3 +109,19 @@ function encodeEmail($e) {
     for ($i = 0; $i < strlen($e); $i++) { $output .= '&#'.ord($e[$i]).';'; }
     return $output;
 }
+
+
+// functie voor categories de juiste id nummer van de database te geven
+function Categories($cat) {
+    if ($cat == 'catnat') {
+        return 1;
+    } elseif ($cat == 'cathum') {
+        return 2;
+    } elseif ($cat == 'catobj') {
+        return 3;
+    } elseif ($cat == 'cattech') {
+        return 4;
+    } else {
+        return 'none';
+    }
+}

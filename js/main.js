@@ -33,53 +33,55 @@ $(document).ready(function(){
 
 });
 
+// voor secondary category in upload
 function showSecCat() {
-    var butseccat = document.getElementById("addseccat");
-    if (butseccat.style.display === "block") {
-        butseccat.style.display = "none";
+    var seccat = document.getElementById("addseccat");
+    if (seccat.style.display === "block") {
+        seccat.style.display = "none";
+        const select = document.querySelector('#afb_sec_cat');
+        select.value = 'catnone';
     } else {
-        butseccat.style.display = "block";
+        seccat.style.display = "block";
     }
 }
 
-function dropdownlist(listindex)
-{
-
-    document.uploadform.secategory.options.length = 0;
+// voor secondary category in upload
+function dropdownlist(listindex) {
+    document.uploadform.afb_sec_cat.options.length = 0;
 
     switch (listindex)
     {
         case "catnat" :
-            document.uploadform.secategory.options[0]=new Option("No secondary category","catnone");
-            document.uploadform.secategory.options[1]=new Option("Human","catnathum");
-            document.uploadform.secategory.options[2]=new Option("Inanimate Objects","catnatobj");
-            document.uploadform.secategory.options[3]=new Option("Techniques","catnattech");
+            document.uploadform.afb_sec_cat.options[0]=new Option("No secondary category","catnone");
+            document.uploadform.afb_sec_cat.options[1]=new Option("Human","cathum");
+            document.uploadform.afb_sec_cat.options[2]=new Option("Inanimate Objects","catobj");
+            document.uploadform.afb_sec_cat.options[3]=new Option("Techniques","cattech");
             break;
 
         case "cathum" :
-            document.uploadform.secategory.options[0]=new Option("No secondary category","catnone");
-            document.uploadform.secategory.options[1]=new Option("Nature","cathumnat");
-            document.uploadform.secategory.options[2]=new Option("Inanimate Objects","cathumobj");
-            document.uploadform.secategory.options[3]=new Option("Techniques","cathumtech");
+            document.uploadform.afb_sec_cat.options[0]=new Option("No secondary category","catnone");
+            document.uploadform.afb_sec_cat.options[1]=new Option("Nature","catnat");
+            document.uploadform.afb_sec_cat.options[2]=new Option("Inanimate Objects","catobj");
+            document.uploadform.afb_sec_cat.options[3]=new Option("Techniques","cattech");
             break;
 
         case "catobj" :
-            document.uploadform.secategory.options[0]=new Option("No secondary category","catnone");
-            document.uploadform.secategory.options[1]=new Option("Nature","catobjnat");
-            document.uploadform.secategory.options[2]=new Option("Human","catobjhum");
-            document.uploadform.secategory.options[3]=new Option("Techniques","catobjtech");
+            document.uploadform.afb_sec_cat.options[0]=new Option("No secondary category","catnone");
+            document.uploadform.afb_sec_cat.options[1]=new Option("Nature","catnat");
+            document.uploadform.afb_sec_cat.options[2]=new Option("Human","cathum");
+            document.uploadform.afb_sec_cat.options[3]=new Option("Techniques","cattech");
             break;
 
         case "cattech" :
-            document.uploadform.secategory.options[0]=new Option("No secondary category","catnone");
-            document.uploadform.secategory.options[1]=new Option("Nature","cattechnat");
-            document.uploadform.secategory.options[2]=new Option("Human","cattechhum");
-            document.uploadform.secategory.options[3]=new Option("Inanimate Objects","cattechobj");
+            document.uploadform.afb_sec_cat.options[0]=new Option("No secondary category","catnone");
+            document.uploadform.afb_sec_cat.options[1]=new Option("Nature","cathnat");
+            document.uploadform.afb_sec_cat.options[2]=new Option("Human","cathum");
+            document.uploadform.afb_sec_cat.options[3]=new Option("Inanimate Objects","catobj");
             break;
 
 
         default:
-            document.uploadform.secategory.options[0]=new Option("Select Category")
+            document.uploadform.afb_sec_cat.options[0]=new Option("Select Category");
             break;
     }
     return true;

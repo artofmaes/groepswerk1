@@ -7,9 +7,10 @@ HomePage3();
 ?>
 
 <?php
+// een array voor mogelijke errors
 $errors = array('user_voornaam'=>'', 'user_naam'=>'', 'user_email'=>'', 'user_username'=>'', 'user_date'=>'', 'user_password'=>'');
 
-if (isset($_POST['registerbutton'])) {
+if (isset($_POST['registerbutton'])) {      // POST check
 
     // voornaam nakijken
     if (empty($_POST['user_voornaam'])) {
