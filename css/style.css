@@ -18,7 +18,7 @@ nav#mainnav ul {
     padding: 0; }
 
 body {
-    font: 100%/1.6 Montserrat, Arial, sans-serif;
+    font: 100%/1.6 Montserrat;
     max-width: 1920px;
     margin: 0 auto;
     background: #eee; }
@@ -32,6 +32,7 @@ header#mainheader {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1000;
     width: 100%;
     background: #000;
     /*GRID OPSTELLEN VOOR HEADER*/ }
@@ -103,18 +104,37 @@ main.container {
     width: 100%;
     margin-top: 75px;
     padding: 20px; }
-main.container nav {
+main.container a {
+    color: black;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out; }
+main.container a:hover {
+    color: #e16969; }
+main.container nav.message {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 20px;
+    background: #000;
+    color: #eee; }
+main.container nav#mainnav {
     background: #999; }
-main.container nav ul {
+main.container nav#mainnav ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-main.container nav ul li {
+main.container nav#mainnav ul li {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
     text-align: center; }
-main.container nav ul li a {
+main.container nav#mainnav ul li a {
     text-decoration: none;
     color: #333;
     display: inline-block;
@@ -126,13 +146,86 @@ main.container nav ul li a {
     transition-duration: 0.25s;
     -webkit-transition-timing-function: ease-in-out;
     transition-timing-function: ease-in-out; }
-main.container nav ul li a:hover {
+main.container nav#mainnav ul li a:hover {
     background: #333;
     color: #999; }
 main.container .uploadform {
     text-align: center;
     width: 50%;
     margin: 0 auto; }
+main.container .uploadform .js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1; }
+main.container .uploadform .inputfile {
+    display: none; }
+main.container .uploadform .inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */ }
+main.container .uploadform .no-js .inputfile + label {
+    display: none; }
+main.container .uploadform .inputfile:focus + label,
+main.container .uploadform .inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px; }
+main.container .uploadform .inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */ }
+main.container .uploadform .inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */ }
+main.container .uploadform .inputfile-4 + label {
+    color: #3a5ff2;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out; }
+main.container .uploadform .inputfile-4:focus + label,
+main.container .uploadform .inputfile-4.has-focus + label,
+main.container .uploadform .inputfile-4 + label:hover {
+    color: #e16969; }
+main.container .uploadform .inputfile-4 + label figure {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #3a5ff2;
+    display: block;
+    padding: 20px;
+    margin: 0 auto 10px;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out; }
+main.container .uploadform .inputfile-4:focus + label figure,
+main.container .uploadform .inputfile-4.has-focus + label figure,
+main.container .uploadform .inputfile-4 + label:hover figure {
+    background-color: #e16969; }
+main.container .uploadform .inputfile-4 + label svg {
+    width: 100%;
+    height: 100%;
+    fill: #f1e5e6; }
 main.container .uploadform legend {
     font-size: 2em;
     font-weight: 700; }
@@ -150,7 +243,7 @@ main.container .uploadform input[type=text], main.container .uploadform textarea
     border: 1px solid #BBB;
     border-radius: 25px;
     padding: 1em;
-    font: 100%/1.3 'Open Sans', Arial, sans-serif;
+    font: 100%/1.3 Montserrat, Arial, sans-serif;
     color: #666;
     -webkit-transition: all .25s ease;
     transition: all .25s ease;
@@ -161,6 +254,7 @@ main.container .uploadform input[type=submit], main.container .uploadform input[
     padding: 20px;
     border: none;
     border: 1px solid white;
+    font: 100%/1.3 Montserrat, Arial, sans-serif;
     border-radius: 25px;
     background: #3a5ff2;
     font-size: 1em;
@@ -176,6 +270,217 @@ main.container .uploadform input[type=submit]:hover, main.container .uploadform 
     cursor: pointer; }
 main.container .uploadform input[type=submit], main.container .uploadform input[type=reset] {
     width: 45%; }
+main.container .register {
+    width: 60%;
+    margin: 0 auto; }
+main.container .register legend {
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center; }
+main.container .register form {
+    width: 50%;
+    margin: 0 auto; }
+main.container .register form ul li {
+    padding-bottom: 1em; }
+main.container .register label {
+    text-align: left;
+    display: inline-block;
+    padding-bottom: 0.5em;
+    margin-left: 1.2em; }
+main.container .register input[type=text], main.container .register input[type=date], main.container .register input[type=password] {
+    width: 100%;
+    border: none;
+    border: 1px solid #BBB;
+    border-radius: 25px;
+    padding: 1em;
+    font: 100%/1.3 Montserrat, Arial, sans-serif;
+    color: #666;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease; }
+main.container .register input[type=submit] {
+    width: 45%;
+    padding: 20px;
+    border: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    background: #3a5ff2;
+    font-size: 1em;
+    font: 100%/1.3 Montserrat, Arial, sans-serif;
+    color: white;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out; }
+main.container .register input[type=submit]:hover {
+    background: #e16969;
+    cursor: pointer; }
+main.container .noaccess {
+    width: 60%;
+    margin: 0 auto; }
+main.container .noaccess h1 {
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center; }
+main.container .noaccess p {
+    text-align: center; }
+main.container .noaccess .card {
+    margin-top: 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+main.container .noaccess .card div h5 {
+    font-weight: 700;
+    font-size: 1.2em; }
+main.container .noaccess .card div a.btn {
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    margin-top: 2em;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 25px; }
+main.container .noaccess .card div a.btn1 {
+    color: white;
+    background: #3a5ff2;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out; }
+main.container .noaccess .card div a.btn1:hover {
+    background: #e16969; }
+main.container .noaccess .card div a.btn2 {
+    color: white;
+    background: #e16969;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out; }
+main.container .noaccess .card div a.btn2:hover {
+    background: #3a5ff2; }
+main.container .login {
+    width: 60%;
+    margin: 0 auto; }
+main.container .login legend {
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center; }
+main.container .login form {
+    width: 50%;
+    margin: 0 auto; }
+main.container .login form ul li {
+    padding-bottom: 1em; }
+main.container .login label {
+    text-align: left;
+    display: inline-block;
+    padding-bottom: 0.5em;
+    margin-left: 1.2em; }
+main.container .login input[type=text], main.container .login input[type=password] {
+    width: 100%;
+    border: none;
+    border: 1px solid #BBB;
+    border-radius: 25px;
+    padding: 1em;
+    font: 100%/1.3 Montserrat, Arial, sans-serif;
+    color: #666;
+    margin-bottom: 1em;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease; }
+main.container .login input[type=submit] {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border: 1px solid white;
+    margin-bottom: 1em;
+    border-radius: 25px;
+    background: #3a5ff2;
+    font-size: 1em;
+    font: 100%/1.3 Montserrat, Arial, sans-serif;
+    color: white;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out; }
+main.container .login input[type=submit]:hover {
+    background: #e16969;
+    cursor: pointer; }
+main.container .image {
+    width: 80%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+main.container .image .left, main.container .image .right {
+    width: 45%; }
+main.container .image .left {
+    margin-right: 5%; }
+main.container .image .left img {
+    width: 100%; }
+main.container .image .left input[type=button] {
+    width: 30%;
+    padding: 10px;
+    border: none;
+    border: 1px solid white;
+    margin-bottom: 1em;
+    border-radius: 25px;
+    background: #3a5ff2;
+    font-size: 1em;
+    font-family: "Font Awesome 5 Free", Montserrat;
+    color: white;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out; }
+main.container .image .left input[type=button]:hover {
+    background: #e16969;
+    cursor: pointer; }
+main.container .image .right h1 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 10px; }
+main.container .image .right p {
+    margin: 10px 0; }
+main.container .image .right .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+main.container .image .right .buttons input[type=button] {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    font-family: "Font Awesome 5 Free", Montserrat;
+    padding: 20px;
+    border: none;
+    border: 1px solid white;
+    margin-bottom: 1em;
+    border-radius: 25px;
+    background: #3a5ff2;
+    font-size: 1em;
+    color: white;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out; }
+main.container .image .right .buttons input[type=button]:hover {
+    background: #e16969;
+    cursor: pointer; }
 
 /*AFBEELDINGEN FEED STIJLEN*/
 section.masonry-grid {

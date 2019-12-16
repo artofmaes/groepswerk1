@@ -14,7 +14,8 @@ function HomePage(){
 
 function HomePage2()
 {
-    print LoadTemplate("homepage2");
+    print str_replace("@@user_username@@", $_SESSION['user']['user_username'], LoadTemplate("homepage2") );
+
 }
 
 function HomePage3()

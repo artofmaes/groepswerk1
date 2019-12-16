@@ -4,21 +4,6 @@ require_once "lib/autoload.php";
 
 BasicHead();
 HomePage();
-?>
-<body>
-
-<div>
-    <h1>Geen toegang!</h1>
-    <p>Gelieve eerst in te loggen</p>
-</div>
-
-<div class="container">
-
-        <?php
-        print LoadTemplate("no_access");
+print LoadTemplate("no_access");
+BasicFooter();
         ?>
-
-</div>
-
-</body>
-</html>

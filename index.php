@@ -9,6 +9,7 @@ if ( ! isset($_SESSION['user']) AND ! $login_form AND ! $register_form AND ! $no
     HomePage2();
     ShowMessages();
 }
+
 NavBar();
 
 

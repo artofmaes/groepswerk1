@@ -112,18 +112,19 @@ if (isset($_POST['registerbutton'])) {      // POST check
                     values('$user_voornaam', '$user_naam', '$user_email', '$user_username', '$user_date_timestamp', '$user_password', '$now')";
 
         if ( ExecuteSQL($sql) ) {
-            $_SESSION["msg"][] = "Bedankt voor uw registratie!" ;
+            $_SESSION["msg"][] = "Thank you for signing up!" ;
 
             if ( ControleLoginWachtwoord( $_POST["user_username"] , $_POST["user_password"]) ) {
                 header("Location: index.php");
             }
         }
         else {
-            $_SESSION["msg"][] = "Sorry, er liep iets fout. Uw gegevens werden niet goed opgeslagen" ;
+            $_SESSION["msg"][] = "Sorry, something went wrong. Your data was not successfully saved." ;
         }
     } // einde submit to database
 }   // einde POST check
 ?>
+    <section class="register">
     <form id="registration_form" method="post" action="register.php">    <!-- action nakijken ---------------------------------->
 
         <fieldset>

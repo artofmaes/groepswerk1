@@ -9,18 +9,20 @@ if ( $formname == "login_form" AND $buttonvalue == "Log in" )
 {
     if ( ControleLoginWachtwoord( $_POST['user_username'], $_POST['user_password'] ) )
     {
-        $_SESSION["msg"][] = "Welkom, " . $_SESSION['user']['user_username'] . "!" ;
+        $_SESSION["msg"][] = "Welcome back " . $_SESSION['user']['user_username'] . "!" ;
         header("Location: /groepswerk1/index.php");
+
+
     }
     else
     {
-        $_SESSION["msg"][] = "Sorry! Verkeerde login of wachtwoord!";
+        $_SESSION["msg"][] = "Sorry! Wrong username or password!";
         header("Location: /groepswerk1/login.php");
     }
 }
 else
 {
-    $_SESSION["msg"][] = "Foute formname of buttonvalue";
+    $_SESSION["msg"][] = "Wrong formname or buttonvalue";
 }
 
 ?>

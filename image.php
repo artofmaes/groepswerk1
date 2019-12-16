@@ -1,5 +1,9 @@
 <?php
 require_once "lib/autoload.php";
+if ( ! isset($_SESSION['user']) AND ! $login_form AND ! $register_form AND ! $no_access)
+{
+    header("Location: /groepswerk1/no_access.php");
+}
 BasicHead();
 HomePage2();
 
@@ -34,20 +38,25 @@ if (count($data) > 1) {
 }
 
 ?>
+    <section class="image">
+        <div class="left">
+            <input type="button" value="&#xf060 Back" onClick="javascript:history.back(-1);" class="fas fa-arrow-left">  <!-- moet nog een pijltje voor  -------------------------------------------------------------------------------------------->
+            <img src="images/<?php echo $afb_bestand ?>" alt="image with caption: <?php echo $afb_naam ?>">
+        </div><!-- left-->
+        <div class="right">
+            <h1><?php echo $afb_naam ?></h1>
+            <p class="info">Uploaded by: <a href="user/<?php echo $user_username ?>/" title="link to userpage of <?php echo $user_username ?>"><?php echo $user_username ?></a></p>
+            <p class="info">Upload date: <?php echo date("d/m/Y", $afb_date) ?></p>
+            <?php echo afbOmschrExplode($afb_omschr) ?>
+            <?php echo $cat ?>
 
-    <input type="button" value="Back" onClick="javascript:history.back(-1);">  <!-- moet nog een pijltje voor  -------------------------------------------------------------------------------------------->
-    <img src="images/<?php echo $afb_bestand ?>" alt="image with caption: <?php echo $afb_naam ?>">
 
-    <h1><?php echo $afb_naam ?></h1>
-    <p class="info">Uploaded by: <a href="user/<?php echo $user_username ?>/" title="link to userpage of <?php echo $user_username ?>" ><?php echo $user_username ?></a></p>
-    <p class="info">Upload date: <?php echo date("d/m/Y", $afb_date) ?></p>
-<?php echo afbOmschrExplode($afb_omschr) ?>
-<?php echo $cat ?>
-
-
-    <form method="post" action="image.php"><input type="button" value="&#xf004 Like" class="far fa-heart" name="likebutton"></p></form>
-    <form method="post" action="collection.php"><p><input type="button" value="&#xf65e Add to collection" class="fas fa-folder-plus" name="collectionbutton"></p></form>
-    <p><input type="button" href="images/<?php echo $afb_bestand ?>" value="&#xf019 Download" class="fas fa-download" download></p>
+            <div class="buttons">
+                <form method="post" action="detail.php"><p><input type="button" value="&#xf004 Like" class="fas fa-heart" name="likebutton"></p></form>
+                <form method="post" action="collection.php"><p><input type="button" value="&#xf65e  Add to collection" class="fas fa-folder-plus" name="collectionbutton"></p></form>
+                <p><input type="button" href="img/<?php echo $afb_bestand ?>" value="&#xf019 Download" class="fas fa-download" download></p>
+            </div>
+        </div><!-- right -->
 
 
 <?php BasicFooter();
